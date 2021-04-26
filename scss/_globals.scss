@@ -1,0 +1,269 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, hr, label {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+
+body {
+    font-family: $typePoppins;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-top: 6rem;
+    margin-bottom: 3.8125rem;
+    position: relative;
+    
+    background-image: url('/images/bg-intro-mobile.png');
+    background-color: $red;
+
+
+    @include breakpoint-up(medium){
+        margin-top: 7.5rem;
+        margin-bottom: 7.375rem;
+        background-image: url('/images/bg-intro-desktop.png');
+    }
+
+}
+
+
+.errormsg {
+    color:red;
+    display: none; 
+    font-size: $fontXsm;
+    text-align: right;
+    padding-bottom: 1rem;
+}
+
+
+
+
+.component {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+
+    @include breakpoint-up(large){
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        width: 69.68rem;
+    }
+
+    .intro {
+        margin: 0 auto 3.5rem auto;
+        text-align: center;
+
+    
+        @include breakpoint-up(large){
+            margin-bottom: 0;
+            margin-right: 4.75rem;
+            text-align: left;
+        }
+
+        .title {
+            font-size: $fontLarge;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            line-height: 1.4;
+    
+            @include breakpoint-up(medium){
+                font-size: $fontXl;
+                line-height: 1.2;
+                margin-bottom: 2rem;
+            }
+        }
+    
+        .description {
+            width: 19.5625rem;
+            font-size: $fontMed;
+            font-weight: 500;
+            display: inline-block;
+
+            @include breakpoint-up(medium){
+                width: 32.8125rem;
+            }
+        }
+    } 
+
+    .form {
+        .form-intro {
+            width: 20.5625rem;
+            height: 5.625rem;
+            background-color: $blue;
+            padding-top: 1rem;
+            border-radius: 13px;
+            font-size: $fontReg;
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.1);
+
+            .intro-highlight{
+                font-weight: 700;
+            }
+            
+
+            @include breakpoint-up(medium){
+                width: 33.875rem;
+                height: 3.75rem;
+            
+
+                br {
+                    display: none;
+                } 
+            }
+        }
+
+        .signup-form {
+            background-color: #fff;
+            width: 20.5625rem;
+            min-height: 27.75rem;
+            border-radius: 13px;
+            margin: 0 auto;
+            box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.1);
+            
+            @include breakpoint-up(medium){
+                width: 33.875rem;
+                min-height: 29.75rem;
+            }
+
+            fieldset {
+                padding: 1.5rem 1.5rem 1.9375rem 1.5rem;
+
+                @include breakpoint-up(medium){
+                    padding: 2.5rem 2.5rem 3.0625rem 2.5rem;
+                }
+                
+            }
+
+            .form-control {
+                display: block;
+                width: 17.4375rem;
+                height: 3.5rem;
+                border: .5px solid #dedede;
+                border-radius: 6px;
+                margin-bottom: 1rem;
+                padding-left: 0.875rem;
+                color: $darkBlue;
+                font-size: $fontSmall;
+                font-weight: 600;
+
+                &:focus{
+                    border: 1px solid $blue;
+                    outline: none;
+                }
+
+                &#submit {
+                    position: relative;
+                    font-size: $fontReg;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #fff;
+                    background-color: $green;
+                    border: none;
+                    box-shadow: 0px 4px 0px rgba(56, 182, 140, 1);
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgba(255, 255, 255, 0.25);
+                        opacity: 0;
+                        transition: opacity 150ms ease-in-out;
+                    }
+
+                    &:hover::before {
+                        opacity: 1;
+                    }
+                }
+
+
+                @include breakpoint-up(medium){
+                    width: 28.75rem;
+                    margin-bottom: 1.25rem;
+                    padding-left: 2.0625rem;
+        
+                }
+            }
+        }
+        .disclaimer {
+            font-size: $fontXsm;
+            color: $grayishBlue;
+            font-weight: 500;
+            text-align: center;
+            margin: 0 auto;
+
+            .disclaimer-highlight{
+                color: $red;
+                font-weight: 700;
+            }
+
+            @include breakpoint-up(medium){
+
+
+                br {
+                    display:none;
+                }
+            }
+        } 
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}

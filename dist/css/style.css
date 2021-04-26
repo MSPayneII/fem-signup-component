@@ -1,0 +1,243 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, hr, label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-top: 6rem;
+  margin-bottom: 3.8125rem;
+  position: relative;
+  background-image: url("/images/bg-intro-mobile.png");
+  background-color: #ff7a7a;
+}
+
+@media (min-width: 40em) {
+  body {
+    margin-top: 7.5rem;
+    margin-bottom: 7.375rem;
+    background-image: url("/images/bg-intro-desktop.png");
+  }
+}
+
+.errormsg {
+  color: red;
+  display: none;
+  font-size: 0.6875rem;
+  text-align: right;
+  padding-bottom: 1rem;
+}
+
+.component {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+}
+
+@media (min-width: 64em) {
+  .component {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    width: 69.68rem;
+  }
+}
+
+.component .intro {
+  margin: 0 auto 3.5rem auto;
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .component .intro {
+    margin-bottom: 0;
+    margin-right: 4.75rem;
+    text-align: left;
+  }
+}
+
+.component .intro .title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 40em) {
+  .component .intro .title {
+    font-size: 3.125rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+}
+
+.component .intro .description {
+  width: 19.5625rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+@media (min-width: 40em) {
+  .component .intro .description {
+    width: 32.8125rem;
+  }
+}
+
+.component .form .form-intro {
+  width: 20.5625rem;
+  height: 5.625rem;
+  background-color: #6055a5;
+  padding-top: 1rem;
+  border-radius: 13px;
+  font-size: 0.9375rem;
+  margin: 0 auto 1.5rem auto;
+  text-align: center;
+  box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+.component .form .form-intro .intro-highlight {
+  font-weight: 700;
+}
+
+@media (min-width: 40em) {
+  .component .form .form-intro {
+    width: 33.875rem;
+    height: 3.75rem;
+  }
+  .component .form .form-intro br {
+    display: none;
+  }
+}
+
+.component .form .signup-form {
+  background-color: #fff;
+  width: 20.5625rem;
+  min-height: 27.75rem;
+  border-radius: 13px;
+  margin: 0 auto;
+  box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 40em) {
+  .component .form .signup-form {
+    width: 33.875rem;
+    min-height: 29.75rem;
+  }
+}
+
+.component .form .signup-form fieldset {
+  padding: 1.5rem 1.5rem 1.9375rem 1.5rem;
+}
+
+@media (min-width: 40em) {
+  .component .form .signup-form fieldset {
+    padding: 2.5rem 2.5rem 3.0625rem 2.5rem;
+  }
+}
+
+.component .form .signup-form .form-control {
+  display: block;
+  width: 17.4375rem;
+  height: 3.5rem;
+  border: .5px solid #dedede;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding-left: 0.875rem;
+  color: #3e3c49;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.component .form .signup-form .form-control:focus {
+  border: 1px solid #6055a5;
+  outline: none;
+}
+
+.component .form .signup-form .form-control#submit {
+  position: relative;
+  font-size: 0.9375rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #38cc8c;
+  border: none;
+  box-shadow: 0px 4px 0px #38b68c;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.component .form .signup-form .form-control#submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.component .form .signup-form .form-control#submit:hover::before {
+  opacity: 1;
+}
+
+@media (min-width: 40em) {
+  .component .form .signup-form .form-control {
+    width: 28.75rem;
+    margin-bottom: 1.25rem;
+    padding-left: 2.0625rem;
+  }
+}
+
+.component .form .disclaimer {
+  font-size: 0.6875rem;
+  color: #b9b6d3;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.component .form .disclaimer .disclaimer-highlight {
+  color: #ff7a7a;
+  font-weight: 700;
+}
+
+@media (min-width: 40em) {
+  .component .form .disclaimer br {
+    display: none;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
